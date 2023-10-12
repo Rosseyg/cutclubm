@@ -1,2 +1,0 @@
-# cutclubm
-Website for MasterClub
