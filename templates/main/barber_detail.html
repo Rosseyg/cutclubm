@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ barber.name }}</title>
+</head>
+<body>
+    <h1>{{ barber.name }}</h1>
+    {% if barber.photo %}
+        <img src="{{ barber.photo.url }}" alt="{{ barber.name }} Photo">
+    {% endif %}
+    {% if barber.profile_text %}
+        <p>{{ barber.profile_text }}</p>
+    {% endif %}
+    <h2>Services Offered:</h2>
+    <ul>
+        {% for service in barber.service_set.all %}
+            <li>{{ service.name }} (Duration: {{ service.duration_minutes }} minutes, Price: ${{ service.price }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

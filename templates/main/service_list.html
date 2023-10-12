@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service List</title>
+</head>
+<body>
+    <h1>List of Services</h1>
+    <ul>
+        {% for service in services %}
+            <li>
+                <a href="{% url 'service_detail' service.pk %}">{{ service.name }}</a> (Duration: {{ service.duration_minutes }} minutes, Price: ${{ service.price }})
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
